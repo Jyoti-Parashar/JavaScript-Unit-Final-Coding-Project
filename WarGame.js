@@ -85,13 +85,13 @@ class Board {
         console.log(`Player 1 Score : ${this.players[0].point}`);
         console.log(`Player 2 Score : ${this.players[1].point}`);
         if (this.players[0].point>this.players[1].point) {
-            console.log(`(Player 1) : ${this.players[0].playerName} won the WAR!!! "😁" `);
+            console.log(`(Player 1) : ${this.players[0].playerName} won the WAR!!!  `);
         }
         else if (this.players[0].point<this.players[1].point){
-            console.log(`(Player 2) : ${this.players[1].playerName} won the WAR!!! "😁" `);
+            console.log(`(Player 2) : ${this.players[1].playerName} won the WAR!!!  `);
         }
         else{
-            console.log(`Its a tie. `);
+            console.log(`It's a tie. `);
         }
 
 
