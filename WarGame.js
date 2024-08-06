@@ -63,25 +63,28 @@ class Board {
     }
 
 
+    // start point of the war game
     deal() {
 
+            
+        do {      // will continue to play untill palyer one has card in his/her deck   
 
-        do {
-
-           // for (let index = 0; index >= this.players[0].playerCards.length ; index++) {
-
-                let firstPlayerCard = this.players[0].playerCards.shift();
-                let secondPlayerCard = this.players[1].playerCards.shift();
+                let firstPlayerCard = this.players[0].playerCards.shift(); // remove the first card
+                let secondPlayerCard = this.players[1].playerCards.shift();  // remove the first card
+                
                 if (firstPlayerCard.value > secondPlayerCard.value) {
-                    this.players[0].point++;
+                    this.players[0].point++;  // award point tp firtsplayer
                 } else if(firstPlayerCard.value < secondPlayerCard.value){
-                    this.players[1].point++;
+                    this.players[1].point++; // award point tp secondsplayer
                 }
                 else {
                     continue;
                 }
-           // }
+           
        } while (this.players[0].playerCards.length > 0 );
+
+       // Displaus the winning result
+
         console.log(`Player 1 Score : ${this.players[0].point}`);
         console.log(`Player 2 Score : ${this.players[1].point}`);
         if (this.players[0].point>this.players[1].point) {
@@ -99,6 +102,7 @@ class Board {
 }
 
 
+// start of the war game
 let gameBoard = new Board();
 gameBoard.start('A', 'B');
 console.log(gameBoard.players);
